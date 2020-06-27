@@ -4,7 +4,8 @@ public class Person {
     private String name;
     private int age;
 
-    public  String a;
+    public String a;
+    public String b;
 
 
     public Person() {
@@ -36,6 +37,16 @@ public class Person {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", a='" + a + '\'' +
+                ", b='" + b + '\'' +
                 '}';
+    }
+
+    public void test() {
+        System.out.println("Person...test...used!");
+    }
+
+    public void test(String name) {
+        System.out.println(name + "Person...test...used!");
     }
 }
