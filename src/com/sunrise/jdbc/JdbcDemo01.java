@@ -7,7 +7,7 @@ import java.sql.Statement;
 public class JdbcDemo01 {
     public static void main(String[] args) throws Exception {
         //1.下载并导入驱动
-        //2.注册驱动
+        //2.注册驱动,注册mysql8版本驱动
         Class.forName("com.mysql.cj.jdbc.Driver");
         //3.获取数据库连接对象
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3308/db1?serverTimezone=UTC", "root", "root");
