@@ -12,7 +12,7 @@ public class JdbcDemo01 {
         //3.获取数据库连接对象
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3308/db1?serverTimezone=UTC", "root", "root");
         //4.定义sql语句
-        String sql = "UPDATE ACCOUNT SET BALANCE='100' WHERE ID='1'";
+        String sql = "UPDATE ACCOUNT SET BALANCE='200' WHERE ID='1'";
         //5.获取sql对象的statment
         Statement stmt = con.createStatement();
         //6.执行sql
