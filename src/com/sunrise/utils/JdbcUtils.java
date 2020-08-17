@@ -11,7 +11,7 @@ import java.util.Properties;
  */
 
 public class JdbcUtils {
-    private static String dirver;
+    private static String driver;
     private static String url;
     private static String user;
     private static String password;
@@ -30,18 +30,17 @@ public class JdbcUtils {
             System.out.println(path);
             pro.load(new FileReader(path));
             //pro.load(new FileReader("src/db.properties"));
-            dirver = pro.getProperty("dirver");
+            driver = pro.getProperty("driver");
             url = pro.getProperty("url");
             user = pro.getProperty("user");
             password = pro.getProperty("password");
             //注册驱动
-            Class.forName(dirver);
+            Class.forName(driver);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 
     /**
@@ -56,13 +55,13 @@ public class JdbcUtils {
     /**
      * 释放资源方式重载
      *
-     * @param stat
+     * @param stmt
      * @param conn
      */
-    public static void Close(Statement stat, Connection conn) {
-        if (stat != null) {
+    public static void Close(Statement stmt, Connection conn) {
+        if (stmt != null) {
             try {
-                stat.close();
+                stmt.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -80,10 +79,10 @@ public class JdbcUtils {
      * 释放连接方法重载
      *
      * @param rs
-     * @param stat
+     * @param stmt
      * @param conn
      */
-    public static void Close(ResultSet rs, Statement stat, Connection conn) {
+    public static void Close(ResultSet rs, Statement stmt, Connection conn) {
         if (rs != null) {
             try {
                 rs.close();
@@ -91,9 +90,9 @@ public class JdbcUtils {
                 e.printStackTrace();
             }
         }
-        if (stat != null) {
+        if (stmt != null) {
             try {
-                stat.close();
+                stmt.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
