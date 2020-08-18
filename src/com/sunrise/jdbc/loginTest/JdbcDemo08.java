@@ -44,6 +44,7 @@ public class JdbcDemo08 {
             sql.append("WHERE USERNAME='" + userName + "' AND PASSWORD='" + passWord + "'");
             stmt = conn.createStatement();
             rs = stmt.executeQuery(String.valueOf(sql));
+            System.out.println(sql);
             //判断输入，如果有下一行确定存在返回true反之返回false
             //rs.next()返回的本来就是true|false
             return rs.next();
