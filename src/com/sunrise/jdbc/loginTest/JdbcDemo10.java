@@ -9,7 +9,8 @@ import java.sql.SQLException;
 /**
  * 使用事务操作数据库
  * conn对象使用setAutoCommit()方法进行开启事务，false开启，默认关闭
- * 程序结尾进行提交conn.
+ * 程序结尾进行提交conn.commit();
+ * 回滚操作放入异常操作中，一旦出现异常，事务进行回滚conn.rollback();
  */
 public class JdbcDemo10 {
     public static void main(String[] args) {
