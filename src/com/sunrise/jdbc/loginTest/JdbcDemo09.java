@@ -11,7 +11,8 @@ import java.util.Scanner;
 /**
  * SQL注入问题：在SQL语句拼接的时候一些关键字参与拼接会出现安全问题
  * 例如：输入用户：ssdfa 密码：a' or 'a' ='a,会登陆成功
- * 使用PreparedStatement来解决，参数使用?来做占位符，使用setString()方法来传参数
+ * 使用PreparedStatement来解决，参数使用?来做占位符
+ * PreparedStatement对象创建的时候需要传递SQL语句，使用setString()方法来传参数，executeQuery()不需要参数
  */
 public class JdbcDemo09 {
     public static void main(String[] args) {
