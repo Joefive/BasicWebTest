@@ -12,7 +12,7 @@ import java.sql.SQLException;
  * 常用技术：C3P0,Druid阿里连接池
  * C3P0技术:1.导包；2.加入xml配置文件；3.创建核心对象ComboPooledDataSource;4.获取连接对象getConnection()；
  */
-public class DataSource01 {
+public class DataSource01_C3P0 {
     public static void main(String[] args) throws SQLException {
         //创建数据库连接池对象,父类引用创建子类对象，多态；
         DataSource ds = new ComboPooledDataSource();
