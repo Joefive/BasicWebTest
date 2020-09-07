@@ -30,6 +30,7 @@ public class JdbcTemplateDemo02 {
         methodFour(1);
         methodFive();
         methodSix();
+        methodSixSimple();
     }
 
     /**
@@ -110,12 +111,12 @@ public class JdbcTemplateDemo02 {
             @Override
             public Emp mapRow(ResultSet resultSet, int i) throws SQLException {
                 Emp emp = new Emp();
-                int id = emp.getId();
+                Integer id = emp.getId();
                 String name = emp.getName();
-                double salary = emp.getSalary();
+                Double salary = emp.getSalary();
                 String gender = emp.getGender();
                 Date join_date = emp.getJoin_date();
-                int dept_id = emp.getDept_id();
+                Integer dept_id = emp.getDept_id();
 
                 emp.setId(id);
                 emp.setDept_id(dept_id);
@@ -138,6 +139,9 @@ public class JdbcTemplateDemo02 {
 
     public static void methodSixSimple(){
         String sql = "SELECT * FROM EMP";
+        List<Emp> query = template.query(sql, new BeanPropertyRowMapper<Emp>(Emp.class));
+        System.out.println(query);
+        System.out.println("**********需求6【简化】执行完成需求5执行完成**********");
 
     }
 }

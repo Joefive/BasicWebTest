@@ -7,18 +7,18 @@ import java.util.Date;
  */
 
 public class Emp {
-    private int id;
+    private Integer id;
     private String name;
     private String gender;
-    private double salary;
+    private Double salary;
     private Date join_date;
-    private int dept_id;
+    private Integer dept_id;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -38,11 +38,11 @@ public class Emp {
         this.gender = gender;
     }
 
-    public double getSalary() {
+    public Double getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
 
@@ -54,11 +54,11 @@ public class Emp {
         this.join_date = join_date;
     }
 
-    public int getDept_id() {
+    public Integer getDept_id() {
         return dept_id;
     }
 
-    public void setDept_id(int dept_id) {
+    public void setDept_id(Integer dept_id) {
         this.dept_id = dept_id;
     }
 
