@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +32,7 @@ public class JdbcTemplateDemo02 {
         methodFive();
         methodSix();
         methodSixSimple();
+        methodSeven();
     }
 
     /**
@@ -142,6 +144,15 @@ public class JdbcTemplateDemo02 {
         List<Emp> query = template.query(sql, new BeanPropertyRowMapper<Emp>(Emp.class));
         System.out.println(query);
         System.out.println("**********需求6【简化】执行完成需求5执行完成**********");
-
     }
+
+    /**
+     * 用于聚合函数，计算表的总行数
+     */
+    public static void methodSeven(){
+        String sql = "SELECT COUNT(1) FROM EMP";
+        Integer num = template.queryForObject(sql, Integer.class);
+        System.out.println("EMP表的总行数："+num);
+    }
+    ArrayList list = new ArrayList();
 }
